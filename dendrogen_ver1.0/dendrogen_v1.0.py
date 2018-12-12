@@ -5,16 +5,16 @@
 ##############################################
 
 #######################################################################
-### dendrogen is a part of the ADBS-ToolKit(adbs-tk) and is built   ###
-### to perform clustering of samples based on the sharing  		  ###
-### of genetic variants among them. This tool can read thousands of ###
-### VCFs (Variant call files) generated from whole genome or exome  ###
-### sequencing and cluster them based on the allelic sharing.  	  ###
-### A cluster dendrogram is generated that helps in visualizing	  ###
-### cluster groups. dendrogen is developed as part of the 		  ###
-### Accelerator program for Discovery in Brain disorders using 	  ###
-### Stem cells (ADBS) at NCBS. 						  ###
-### Please read the README file before using this program.		  ###
+### dendrogen is a part of the ADBS-ToolKit(adbs-tk) and is built   
+### to perform clustering of samples based on the sharing  		  
+### of genetic variants among them. This tool can read thousands of 
+### VCFs (Variant call files) generated from whole genome or exome  
+### sequencing and cluster them based on the allelic sharing.  	  
+### A cluster dendrogram is generated that helps in visualizing	  
+### cluster groups. dendrogen is developed as part of the 		  
+### Accelerator program for Discovery in Brain disorders using 	  
+### Stem cells (ADBS) at NCBS. 						  
+### Please read the README file before using this program.		  
 #######################################################################
 
 # packages import
@@ -66,6 +66,8 @@ def frNameCr(nd):
 		frName.append("df_"+str(i))
 	return frName
 
+print "||| Reading VCF files |||"
+
 j = 0
 frP = frNameCr(len1)
 for i in vcf_files:
@@ -77,6 +79,7 @@ for i in vcf_files:
 ###
 ##### Identifying common variants across samples
 ###
+print "||| Identifying common variants across samples |||"
 
 j = 0
 x= []
@@ -101,6 +104,7 @@ venn_matA = np.reshape(venn_mat, (len1,len1))
 ###
 ##### Calculating the distance matrix 
 ###
+print "||| Computing distance matrix |||"
 
 len3 = len(venn_matA)
 matB = np.empty(shape=[len3, len3])
@@ -121,6 +125,7 @@ for i in range(0,len3):
 			matC[i,j] = ( 1 / matB[i,j] )
 
 df_matC = pd.DataFrame(matC, columns=sam_names, index=sam_names)
+print "||| Writing the distance matrix to output directory |||"
 out_file = outdir + "/distanceMatrix_forPlotting.csv"
 df_matC.to_csv(out_file, mode='a', sep=',')
 #####################################################################
@@ -129,9 +134,13 @@ df_matC.to_csv(out_file, mode='a', sep=',')
 ###
 ##### Performing clustering and plotting dendrogram (Using R)
 ###
-
+print "||| Performing clustering and plotting dendrogram |||"
 os.chdir(outdir)
 os.system("R -q -e \"matC = read.csv('distanceMatrix_forPlotting.csv', row.names = 1); distMat = as.dist(matC); hclust(distMat); pdf('result_dendrogram.pdf',width=11.693,height=8.2675); plot (hclust(distMat, method='complete')); dev.off();\"")
+print "||| Writing the dendrogram to output directory |||"
+
+print "||| dendrogen - COMPLETED !!! |||"
+
 #####################################################################
 
 
