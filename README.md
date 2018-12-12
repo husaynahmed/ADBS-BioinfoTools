@@ -1,4 +1,4 @@
-#			ADBS-ToolKit ver1.0 
+# ADBS-ToolKit version 1.0 
 
 # Introduction
 
@@ -22,11 +22,13 @@ developed and being employed for analyzing these datasets.
 
 #### Currently the following tools are available in adbs-tk:
 
-1. dendrogen ver1.0
-	dendrogen is a tool to perform clustering of samples based on the sharing of genetic variants among them. This tool can read thousands of VCFs (Variant call files) generated from whole genome or exome sequencing and cluster them based on the allelic sharing. A cluster dendrogram is generated that helps in visualizing	cluster groups.
+#### 1. dendrogen ver1.0
 
-2. ViV ver1.0
-	ViV (Venn in VCFs) is a script to find the number of common genetic variants across multiple samples. This tool can simultaneously process thousands of VCF files obtained from whole genome/exome sequencing.
+dendrogen is a tool to perform clustering of samples based on the sharing of genetic variants among them. This tool can read thousands of VCFs (Variant call files) generated from whole genome or exome sequencing and cluster them based on the allelic sharing. A cluster dendrogram is generated that helps in visualizing	cluster groups.
+
+#### 2. ViV ver1.0
+
+ViV (Venn in VCFs) is a script to find the number of common genetic variants across multiple samples. This tool can simultaneously process thousands of VCF files obtained from whole genome/exome sequencing.
 
 
 # LICENSE
