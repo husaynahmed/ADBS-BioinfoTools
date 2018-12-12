@@ -1,0 +1,149 @@
+##############################################
+##############################################
+############# dendrogen ver 1.0 ##############
+##############################################
+##############################################
+
+#######################################################################
+### dendrogen is a part of the ADBS-ToolKit(adbs-tk) and is built   ###
+### to perform clustering of samples based on the sharing  		  ###
+### of genetic variants among them. This tool can read thousands of ###
+### VCFs (Variant call files) generated from whole genome or exome  ###
+### sequencing and cluster them based on the allelic sharing.  	  ###
+### A cluster dendrogram is generated that helps in visualizing	  ###
+### cluster groups. dendrogen is developed as part of the 		  ###
+### Accelerator program for Discovery in Brain disorders using 	  ###
+### Stem cells (ADBS) at NCBS. 						  ###
+### Please read the README file before using this program.		  ###
+#######################################################################
+
+
+
+
+###############################################################
+Requirements:
+###############################################################
+=> python version 2.7
+=> python packages NumPy, pandas, os, glob, argparse 
+	To install them, use "sudo pip install numpy pandas os glob argparse"
+
+###############################################################
+USAGE:
+###############################################################
+
+usage: dendrogen_v1.0.py [-h] -I INPUTFILEINFO -O OUTDIR
+
+dendrogen version 1.0
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -I INPUTFILEINFO, --inputfileinfo INPUTFILEINFO
+                        Path to the text file containing list of VCF file
+                        paths. One VCF file per line.
+  -O OUTDIR, --outdir OUTDIR
+                        Path to the output directory where the dendrogen
+                        results will be written.
+
+Please give absolute(full) path to all the files. 
+
+###############################################################
+How to Cite?
+###############################################################
+Please cite the following article:
+
+Suhas Ganesh,  Husayn Ahmed P,  Ravi K Nadella, Ravi P More, Manasa Sheshadri, Biju Viswanath, Mahendra Rao, Sanjeev Jain, The ADBS consortium, Odity Mukherjee. 2018. Exome sequencing in families with severe mental illness identifies novel and rare variants in genes implicated in Mendelian neuropsychiatric syndromes. Psychiatry and Clinical Neurosciences. doi: 10.1111/pcn.12788
+
+
+###############################################################
+LICENSE
+###############################################################
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+###############################################################
+How does dendrogen work?
+###############################################################
+
+Dendrogen is a tool to perform hierarchical clustering of samples based on the sharing of genetic variants identified from whole genome or exome sequencing. Processing a large number of VCF files simultaneously to generate clusters/groups based on similarity is challenging due to the huge size of these files. The advantage of this tool lies in its ability to process thousands of large-sized VCF files from WGS/WES. It generates allele sharing matrix and converts them to a distance matrix. The distance matrix is computed based on the sharing of variants between each pair of samples, not accounting for zygosity. Using this distance matrix, hierarchical clustering is performed using hclust in R and cluster dendrogram is plotted with "complete" distance method in R.
+
+
+
+###############################################################
+Instructions
+###############################################################
+
+
+1. The folder "adbs-tk/example_files" contains a set of sample input files. 
+
+2. Create a file detailing the information about input variant files (INPUTFILEINFO)
+	This file contains 2 rows separated by tab. 1st row - Sample identifier; 2nd row - Path to the VCF file. 
+
+3. Create output directory in which you need dendrogen to write the results to. The folder "adbs-tk/dendrogen_ver1.0/sample_out_dir" contains sample results generated by dendrogen using the example input files.
+
+
+###############################################################
+Example commands
+###############################################################
+
+mkdir /adbs-tk/dendrogen_ver1.0/sample_out_dir
+
+python dendrogen_v1.0.py \
+	-I /adbs-tk/dendrogen_ver1.0/sample_input_info.txt \
+	-O /adbs-tk/dendrogen_ver1.0/sample_out_dir
+
+###############################################################
+Output files
+###############################################################
+
+Two files are created in the output directory.
+1. "distanceMatrix_forPlotting.csv"
+	This contains the distance matrix generated by the tool. This matrix can be used for clustering and plotting in several other ways.
+
+2. "result_dendrogram.pdf"
+	This is the resulting dendrogram generated by the tool.
+
+Note: If files with the same name already exist in the output directory, the new results will be appended. It's better to remove such files before running this tool.
+
+
+
+###############################################################
+Contact
+###############################################################
+For technical queries, please write to husaynp@ncbs.res.in
+
+
+
+###############################################################
+Contributors
+###############################################################
+Developed by: Husayn Ahmed P 
+
+Conceptualized by: Suhas Ganesh, Husayn Ahmed P, Odity Mukherjee
+
+Developed for:
+The Accelerator program for Discovery in Brain disorders using Stem cells (ADBS)
+National Centre for Biological Sciences - Tata Institute of Fundamental Research (NCBS-TIFR)
+Bangalore 560065,Karnataka,India
+
+
+######################################################################################
+######################################################################################
