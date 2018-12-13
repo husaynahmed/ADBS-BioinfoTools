@@ -1,5 +1,5 @@
-Sample1	/adbs-tk/example_files/sample1.vcf
-Sample2	/adbs-tk/example_files/sample2.vcf
-Sample3	/adbs-tk/example_files/sample3.vcf
-Sample4	/adbs-tk/example_files/sample4.vcf
-Sample5	/adbs-tk/example_files/sample5.vcf
+Sample1	/ADBS-BioinfoTools/example_files/sample1.vcf
+Sample2	/ADBS-BioinfoTools/example_files/sample2.vcf
+Sample3	/ADBS-BioinfoTools/example_files/sample3.vcf
+Sample4	/ADBS-BioinfoTools/example_files/sample4.vcf
+Sample5	/ADBS-BioinfoTools/example_files/sample5.vcf
