@@ -2,15 +2,7 @@
 
 ## Introduction
 
-dendrogen is a part of the ADBS-ToolKit(adbs-tk) and is built
-to perform clustering of samples based on the sharing 
-of genetic variants among them. This tool can read thousands of 
-VCFs (Variant call files) generated from whole genome or exome 
-sequencing and cluster them based on the allelic sharing. 
-A cluster dendrogram is generated that helps in visualizing 
-cluster groups. dendrogen is developed as part of the
-Accelerator program for Discovery in Brain disorders using
-Stem cells (ADBS) at NCBS. 
+dendrogen is a part of the ADBS-BioinfoTools and is built to perform clustering of samples based on the sharing of genetic variants among them. This tool can read thousands of VCFs (Variant call files) generated from whole genome or exome sequencing and cluster them based on the allelic sharing. A cluster dendrogram is generated that helps in visualizing cluster groups. dendrogen is developed as part of the Accelerator program for Discovery in Brain disorders using Stem cells (ADBS) at NCBS. 
 
 
 
