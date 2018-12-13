@@ -11,7 +11,7 @@ A cluster dendrogram is generated that helps in visualizing
 cluster groups. dendrogen is developed as part of the
 Accelerator program for Discovery in Brain disorders using
 Stem cells (ADBS) at NCBS. 
-Please read the README file before using this program.
+
 
 
 ## Requirements
@@ -20,6 +20,8 @@ Please read the README file before using this program.
 => python packages NumPy, pandas, os, glob, argparse 
 To install them, use 
 	pip install numpy pandas os glob argparse
+
+
 
 ## Usage
 
@@ -39,11 +41,13 @@ optional arguments:
 Please give absolute(full) path to all the files. 
 
 
+
 ## How to Cite?
 
 Please cite the following article:
 
 Suhas Ganesh,  Husayn Ahmed P,  Ravi K Nadella, Ravi P More, Manasa Sheshadri, Biju Viswanath, Mahendra Rao, Sanjeev Jain, The ADBS consortium, Odity Mukherjee. 2018. Exome sequencing in families with severe mental illness identifies novel and rare variants in genes implicated in Mendelian neuropsychiatric syndromes. Psychiatry and Clinical Neurosciences. doi: 10.1111/pcn.12788
+
 
 
 ## LICENSE
@@ -69,9 +73,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+
 ## How does dendrogen work?
 
 Dendrogen is a tool to perform hierarchical clustering of samples based on the sharing of genetic variants identified from whole genome or exome sequencing. Processing a large number of VCF files simultaneously to generate clusters/groups based on similarity is challenging due to the huge size of these files. The advantage of this tool lies in its ability to process thousands of large-sized VCF files from WGS/WES. It generates allele sharing matrix and converts them to a distance matrix. The distance matrix is computed based on the sharing of variants between each pair of samples, not accounting for zygosity. Using this distance matrix, hierarchical clustering is performed using hclust in R and cluster dendrogram is plotted with "complete" distance method in R.
+
 
 
 ## Instructions
@@ -125,3 +131,5 @@ The Accelerator program for Discovery in Brain disorders using Stem cells (ADBS)
 National Centre for Biological Sciences - Tata Institute of Fundamental Research (NCBS-TIFR)
 Bangalore 560065,Karnataka,India
 
+****
+****
