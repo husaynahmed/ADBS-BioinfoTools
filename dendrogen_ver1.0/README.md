@@ -127,11 +127,12 @@ Developed by: Husayn Ahmed P
 Conceptualized by: Suhas Ganesh, Husayn Ahmed P, Odity Mukherjee
 
 Developed for:
+
 The Accelerator program for Discovery in Brain disorders using Stem cells (ADBS)
 
 National Centre for Biological Sciences - Tata Institute of Fundamental Research (NCBS-TIFR)
 
-Bangalore 560065,Karnataka,India
+Bangalore 560065, Karnataka, India
 
 
 
