@@ -16,10 +16,11 @@ Stem cells (ADBS) at NCBS.
 
 ## Requirements
 
-=> python version 2.7
-=> python packages NumPy, pandas, os, glob, argparse 
+1. python version 2.7
+2. python packages NumPy, pandas, os, glob, argparse 
 To install them, use 
-	pip install numpy pandas os glob argparse
+
+		pip install numpy pandas os glob argparse
 
 
 
