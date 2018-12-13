@@ -5,7 +5,7 @@
 ##############################################
 
 #######################################################################
-### dendrogen is a part of the ADBS-ToolKit(adbs-tk) and is built   
+### dendrogen is a part of the ADBS-BioinfoTools and is built   
 ### to perform clustering of samples based on the sharing  		  
 ### of genetic variants among them. This tool can read thousands of 
 ### VCFs (Variant call files) generated from whole genome or exome  
@@ -30,7 +30,7 @@ import argparse
 ##### Argument for dendrogen
 ###
 
-parser = argparse.ArgumentParser(description='dendrogen version 1.0', epilog='Please give absolute(full) path to all the files. Refer the README at https://github.com/husaynahmed/adbs-tk for more information.')
+parser = argparse.ArgumentParser(description='ADBS-BioinfoTools | dendrogen version 1.0', epilog='Please give absolute(full) path to all the files. Refer the README at https://github.com/husaynahmed/adbs-tk for more information.')
 
 parser.add_argument('-I', '--inputfileinfo',
                      help='Path to the text file containing list of VCF file paths. One VCF file per line.',
