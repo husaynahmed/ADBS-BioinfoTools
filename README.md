@@ -56,7 +56,7 @@ SOFTWARE.
 
 ## Contributors and contact information
 
-Ravi P More (ravim@ncbs.res.in)
+Ravi P More (ravimore7@yahoo.in)
 
 Husayn Ahmed P (husaynp@ncbs.res.in)
 
